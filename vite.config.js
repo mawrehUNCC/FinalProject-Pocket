@@ -1,8 +1,7 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/FinalProject-Pocket/', // 👈 Important for GitHub Pages!
+  base: '/FinalProject-Pocket/', // This must match the repo name exactly
   plugins: [react()],
 });
