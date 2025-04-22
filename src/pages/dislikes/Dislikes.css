@@ -1,0 +1,82 @@
+/* Overall container with sidebar */
+.dislikes-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 50px auto 3rem auto;
+  box-sizing: border-box;
+}
+
+.dislikes-header h2 {
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/* Main content wrapper */
+.dislikes-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem; /* Optional spacing between sidebar and main content */
+  max-width: 900px;
+}
+
+/* Header styles */
+.dislikes-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 42px;
+}
+
+/* Default no-disliked-articles message centered */
+.no-dislikes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.no-dislikes {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.no-dislikes-image {
+  width: 40%;
+  height: auto;
+  margin: auto;
+}
+
+.side-nav {
+  flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* When disliked articles exist, display as a 3-column grid */
+.dislikes-item-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 300px;
+}
+
+.divider {
+  color: #d9d9d9;
+  width: 100%;
+  border-style: solid;
+  margin-top: 10px;
+}

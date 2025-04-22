@@ -1,0 +1,581 @@
+/* === Base Card Styles === */
+.card-MINI,
+.card-SM,
+.card-AC,
+.card-RR,
+.card-MD,
+.card-LG,
+.card-RS,
+.card-HZ,
+.card-RR {
+  background: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  height: 100%;
+  max-width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* === Image === */
+.img-MINI,
+.img-SM,
+.img-AC,
+.img-RR,
+.img-MD,
+.img-LG,
+.img-RS,
+.img-HZ,
+.img-RR {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+/* === Card Inner Layout ==== */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 15px;
+  overflow: hidden;
+  min-height: 100%;
+  position: relative; /* Ensures actions-container stays at the bottom */
+}
+
+/* === Title & Description === */
+.title-MINI,
+.title-SM,
+.title-AC,
+.title-RR,
+.title-MD,
+.title-LG,
+.title-RS,
+.title-HZ,
+.title-RR {
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-bottom: 0.5rem;
+  margin: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.description {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  line-height: 1.4;
+  color: #444;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* only show 4 lines */
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+  flex-shrink: 1;
+}
+
+.source-RR,
+.source-MD,
+.source-LG,
+.source-HZ,
+.source-RR{
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  color: #464646;
+  margin: 10px;
+}
+
+.description-RR,
+.description-MD,
+.description-LG,
+.description-RS,
+.description-HZ{
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  margin: 10px;
+  flex-shrink: 1; /* allow it to shrink when space is tight */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+}
+
+
+/* === Actions (always pinned bottom) === */
+.actions-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 0px;
+  flex-shrink: 0;
+}
+
+.card-RS,
+.card-HZ {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.img-RS,
+.img-HZ {
+  width: 40%;
+  flex-shrink: 0;
+}
+
+/* Small Article Card Styles (Carousel) */
+.card-SM {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* Ensures actions-container stays at the bottom */
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: auto;
+  max-height: 426px;
+  width: 275px;
+  margin: 2em auto;
+}
+/* === recent save Layout === */
+.img-RS {
+  height: auto;               /* Don’t stretch vertically */
+  max-height: 100px;          /* Limit the height */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  flex: 0 1 30%;
+  min-width: 70px;
+}
+
+.card-RS {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09);
+  height: auto;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+
+.content-RS {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  /* align-items: flex-start; */
+}
+
+.card-RS:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+
+.title-RS {
+  font-weight: 600;
+  font-size: clamp(0.6rem, 1.3vw, 0.9rem);
+  line-height: 1.2;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #444;
+}
+
+.source-RS {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: flex-start;
+  color: #4f4f4f;
+  font-size: smaller;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+@media (min-width: 960px) {
+  .img-RS {
+    /* make it fill up the height */
+    height: 95%;
+    min-width: 90px;
+    object-fit: cover;
+  }
+  .title-RS {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .card-RS {
+    display: flex;
+    flex-direction: row;          /* Image left, text right */
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09);
+    height: 100px;                 /* Allow height to grow */
+    max-height: none;            /* Remove restriction */
+    overflow: hidden;
+  }
+
+  .img-RS {
+    height: auto;
+    max-height: 80px;            /* Slightly smaller for small screens */
+    object-fit: cover;
+    border-radius: 0.75rem;
+    flex: 0 0 30%;               /* Fixed width column */
+    min-width: 60px;
+    max-width: 30%;
+  }
+
+  .content-RS {
+    flex: 1;                     /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .title-RS {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(28, 28, 28);
+  }
+
+  .source-RS {
+    font-size: 0.9rem;
+    justify-content: left;
+    color: #4f4f4f;
+    margin-top: 15px;
+  }
+}
+
+.description-SM {
+  font-size: clamp(0.5rem, 1.2vw, 0.9rem);
+  margin: 10px;
+  flex-shrink: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+}
+
+
+.card-SM:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.source-SM {
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  color: #464646;
+  font-weight: bold;
+  margin: 15px;
+  margin-top: 17px;
+  font-weight: bold;
+}
+
+.card-RR::before {
+  content: url('recommended-badge.svg'); /* Adds the badge image */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 47px;
+  height: 47px;
+  fill: #FFEB0B;
+}
+
+.badge-RR {
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  z-index: 1; /* Ensures the badge appears above other elements */
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  /* .card-RS, */
+  .card-HZ,
+  .card-RR 
+  {
+    flex-direction: column;
+  }
+
+  /* .img-RS, */
+  .img-HZ
+  ,.img-RR 
+  {
+    width: 100%;
+  }
+
+  .card-body.horizontal {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-MINI,
+  .title-SM,
+  .title-AC {
+    font-size: 1rem;
+  }
+
+  .description {
+    -webkit-line-clamp: 3;
+  }
+
+  .actions-container {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+
+
+
+
+
+
+
+/* === Grid Sizing Consistency for saved article === */
+.card-AC {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  height: 100%;
+  max-width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.6s ease-out;
+}
+
+.more-options {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.AC-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.img-AC {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  height: 200px; /* Adjust the image height */
+}
+
+.title-AC {
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.content-AC {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+/* === Dropdown Menu === */
+.AC-dropdown {
+  position: absolute;
+  /* bottom: 0px; */
+  right: 15px;
+}
+
+.AC-dropdown-menu {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 150px;
+  bottom: 35px;
+  right: 0;
+  z-index: 10;
+}
+
+.AC-dropdown-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.AC-dropdown-icon {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+.source-AC {
+  font-size: 0.9rem;
+  color: #464646;
+  padding: 10px;
+}
+
+.saves-article-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 300px;
+}
+
+/* Max 3 per row on large screens */
+@media (min-width: 734px) {
+  .saves-article-grid,
+  .likes-item-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Wrap on medium screens */
+@media (max-width: 734px) {
+  .saves-article-grid{
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  }
+}
+
+/* Stack on small screens */
+@media (max-width: 600px) {
+  .saves-article-grid{
+    grid-template-columns: 1fr;
+  }
+
+
+  .card-AC {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    height: 150px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .img-AC {
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    flex-shrink: 0;
+  }
+  
+  .content-AC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    overflow: hidden;
+    min-width: 0;
+  }
+  
+  .title-AC {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .source-AC {
+    font-size: 0.75rem;
+    color: #474747;
+    font-weight: bold;
+    margin-top: 90px;
+    position: start;
+    position: absolute;
+    left: 5px;
+  }
+  
+  .actions-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+  }
+
+  .more-options {
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    right: 8px;
+
+  }
+
+  .AC-dropdown-menu {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    width: 150px;
+    top: 60px;
+    right: 0px;
+    z-index: 10;
+  }
+
+  .card-AC {
+    position: relative; /* Make this the positioning context for absolutely positioned children */
+  }
+}
+
+
+

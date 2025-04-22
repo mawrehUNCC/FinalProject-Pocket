@@ -1,0 +1,18 @@
+.WR-feed {
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+  
+  .WR-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem 2rem;
+    align-items: stretch;
+    justify-content: center;
+  }
+  
+  .WR-grid .article-card {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  

@@ -1,0 +1,106 @@
+/* Likes Page Specific Styling */
+
+/* Overall container keeps sidebar and main content in a row */
+.likes-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 50px auto 3rem auto;
+  box-sizing: border-box;
+}
+
+/* Wrapper for main content (header and articles) */
+.likes-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem; /* Optional spacing between sidebar and main content */
+  max-width: 900px;
+}
+
+/* Header styles */
+.likes-header {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 42px;
+}
+
+.likes-header h2 {
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/* When no liked articles exist, center the message */
+.no-likes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.no-likes {
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.no-likes-image {
+  width: 40%;
+  height: auto;
+  margin: auto;
+}
+
+.side-nav {
+  flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Divider */
+.divider {
+  color: #d9d9d9;
+  width: 100%;
+  border-style: solid;
+  margin-top: 10px;
+  border-width: 0.5px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1024px) {
+  .likes-item-container {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: none;
+  }
+
+  .side-nav {
+    display: none;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+}
+
+@media (max-width: 600px) {
+  .likes-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0rem;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    margin-top: 50px;
+  }
+}
